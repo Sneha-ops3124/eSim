@@ -59,6 +59,11 @@ run_version_script() {
     if [[ -f "$SCRIPT" ]]; then
         echo "Running script: $SCRIPT $ARGUMENT"
         bash "$SCRIPT" "$ARGUMENT"
+fi
+}
+
+function writeEsimConfig
+{
     echo "[eSim]" >> $config_dir/$config_file
     echo "eSim_HOME = $eSim_Home" >> $config_dir/$config_file
     echo "LICENSE = %(eSim_HOME)s/LICENSE" >> $config_dir/$config_file
